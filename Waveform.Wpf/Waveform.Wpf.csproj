@@ -38,21 +38,21 @@
     <DocumentationFile>bin\Release\Waveform.Wpf.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AudioObjects, Version=1.0.0.38823, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="AudioObjects, Version=1.0.5241.29924, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\AudioObjects.1.0.0.38823\lib\net45\AudioObjects.dll</HintPath>
+      <HintPath>..\packages\AudioObjects.1.0.5241.29924\lib\net45\AudioObjects.dll</HintPath>
     </Reference>
-    <Reference Include="Extensions.Wpf, Version=1.0.0.28131, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Extensions.Wpf, Version=1.0.5241.30077, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Extensions.Wpf.1.0.0.28131\lib\net45\Extensions.Wpf.dll</HintPath>
+      <HintPath>..\packages\Extensions.Wpf.1.0.5241.30077\lib\net45\Extensions.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="Graphics, Version=1.0.0.28881, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Graphics, Version=1.0.5241.29945, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Graphics.1.0.0.28881\lib\net45\Graphics.dll</HintPath>
+      <HintPath>..\packages\Graphics.1.0.5241.29945\lib\net45\Graphics.dll</HintPath>
     </Reference>
-    <Reference Include="Graphics.Wpf, Version=1.0.0.29073, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Graphics.Wpf, Version=1.0.5241.30019, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Graphics.Wpf.1.0.0.29073\lib\net45\Graphics.Wpf.dll</HintPath>
+      <HintPath>..\packages\Graphics.Wpf.1.0.5241.30019\lib\net45\Graphics.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -60,9 +60,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="Waveform, Version=1.0.0.34997, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Waveform, Version=1.0.5241.29984, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Waveform.1.0.0.34997\lib\net45\Waveform.dll</HintPath>
+      <HintPath>..\packages\Waveform.1.0.5241.29984\lib\net45\Waveform.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
