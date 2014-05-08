@@ -1,0 +1,276 @@
+﻿<UserControl x:Class="Waveform.Wpf.WaveformControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:extensions="clr-namespace:Extensions.Wpf;assembly=Extensions.Wpf"
+             xmlns:gestures="clr-namespace:Extensions.Wpf.Gestures;assembly=Extensions.Wpf"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:test1="clr-namespace:Waveform.Wpf"
+             xmlns:valueConverters="clr-namespace:Waveform.Wpf.ValueConverters"
+             xmlns:waveform="clr-namespace:Waveform;assembly=Waveform"
+             x:Name="UserControl1"
+             Focusable="True"
+             MouseEnter="OnMouseEnter"
+             SnapsToDevicePixels="True"
+             UseLayoutRounding="True"
+             d:DesignHeight="200"
+             d:DesignWidth="400"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="TimelineUnitValues"
+                            MethodName="GetValues"
+                            ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="waveform:TimelineUnit" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
+    <!--
+        <UserControl.FocusVisualStyle>
+        <Style>
+        <Setter Property="Control.Template">
+        <Setter.Value>
+        <ControlTemplate>
+        <Rectangle Stroke="Red"
+        StrokeDashArray="10 20"
+        StrokeThickness="1" />
+        </ControlTemplate>
+        </Setter.Value>
+        </Setter>
+        </Style>
+        </UserControl.FocusVisualStyle>
+    -->
+
+
+    <UserControl.InputBindings>
+        <!--  Region Horizontal zoom in  -->
+        <KeyBinding Key="Up"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.HorizontalZoomInParameter}" />
+        <KeyBinding Key="Add"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.HorizontalMovementFast}" />
+        <KeyBinding Key="G"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.HorizontalZoomInParameter}" />
+        <MouseBinding Command="Zoom"
+                      CommandParameter="{x:Static test1:WaveformControl.HorizontalZoomInParameter}"
+                      Gesture="{x:Static gestures:MouseWheelGesture.CtrlWheelUp}" />
+        <!--  EndRegion  -->
+        <!--  Region Horizontal zoom out  -->
+        <KeyBinding Key="Down"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.HorizontalZoomOutParameter}" />
+        <KeyBinding Key="Subtract"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.HorizontalZoomOutParameter}" />
+        <KeyBinding Key="H"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.HorizontalZoomOutParameter}" />
+        <MouseBinding Command="Zoom"
+                      CommandParameter="{x:Static test1:WaveformControl.HorizontalZoomOutParameter}"
+                      Gesture="{x:Static gestures:MouseWheelGesture.CtrlWheelDown}" />
+        <!--  EndRegion  -->
+        <!--  Region Horizontal zoom reset  -->
+        <KeyBinding Key="Multiply"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.HorizontalZoomResetParameter}" />
+        <KeyBinding Key="J"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.HorizontalZoomResetParameter}" />
+        <!--  EndRegion  -->
+        <!--  Region Vertical zoom in  -->
+        <KeyBinding Key="Up"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.VerticalZoomInParameter}"
+                    Modifiers="Shift" />
+        <KeyBinding Key="Add"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.VerticalZoomInParameter}"
+                    Modifiers="Shift" />
+        <KeyBinding Key="G"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.VerticalZoomInParameter}"
+                    Modifiers="Shift" />
+        <MouseBinding Command="Zoom"
+                      CommandParameter="{x:Static test1:WaveformControl.VerticalZoomInParameter}"
+                      Gesture="{x:Static gestures:MouseWheelGesture.CtrlShiftWheelUp}" />
+        <!--  EndRegion  -->
+        <!--  Region Vertical zoom out  -->
+        <KeyBinding Key="Down"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.VerticalZoomOutParameter}"
+                    Modifiers="Shift" />
+        <KeyBinding Key="Subtract"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.VerticalZoomOutParameter}"
+                    Modifiers="Shift" />
+        <KeyBinding Key="H"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.VerticalZoomOutParameter}"
+                    Modifiers="Shift" />
+        <MouseBinding Command="Zoom"
+                      CommandParameter="{x:Static test1:WaveformControl.VerticalZoomOutParameter}"
+                      Gesture="{x:Static gestures:MouseWheelGesture.CtrlShiftWheelDown}" />
+        <!--  EndRegion  -->
+        <!--  Region Vertical zoom reset  -->
+        <KeyBinding Key="J"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.VerticalZoomResetParameter}"
+                    Modifiers="Shift" />
+        <KeyBinding Key="Multiply"
+                    Command="Zoom"
+                    CommandParameter="{x:Static test1:WaveformControl.VerticalZoomResetParameter}"
+                    Modifiers="Shift" />
+        <!--  EndRegion  -->
+
+        <!--  Region Movement  -->
+        <KeyBinding Key="Left"
+                    Command="MoveLeft"
+                    CommandParameter="{x:Static test1:WaveformControl.HorizontalMovementSlow}" />
+        <KeyBinding Key="Right"
+                    Command="MoveRight"
+                    CommandParameter="{x:Static test1:WaveformControl.HorizontalMovementSlow}" />
+        <KeyBinding Key="Left"
+                    Command="MoveLeft"
+                    CommandParameter="{x:Static test1:WaveformControl.HorizontalMovementNormal}"
+                    Modifiers="Control" />
+        <KeyBinding Key="Right"
+                    Command="MoveRight"
+                    CommandParameter="{x:Static test1:WaveformControl.HorizontalMovementNormal}"
+                    Modifiers="Control" />
+        <KeyBinding Key="PageUp"
+                    Command="MoveLeft"
+                    CommandParameter="{x:Static test1:WaveformControl.HorizontalMovementNormal}" />
+        <KeyBinding Key="PageDown"
+                    Command="MoveRight"
+                    CommandParameter="{x:Static test1:WaveformControl.HorizontalMovementNormal}" />
+        <MouseBinding Command="MoveLeft"
+                      CommandParameter="{x:Static test1:WaveformControl.HorizontalMovementNormal}"
+                      Gesture="{x:Static gestures:MouseWheelGesture.WheelUp}" />
+        <MouseBinding Command="MoveRight"
+                      CommandParameter="{x:Static test1:WaveformControl.HorizontalMovementNormal}"
+                      Gesture="{x:Static gestures:MouseWheelGesture.WheelDown}" />
+        <MouseBinding Command="MoveLeft"
+                      CommandParameter="{x:Static test1:WaveformControl.HorizontalMovementFast}"
+                      Gesture="{x:Static gestures:MouseWheelGesture.ShiftWheelUp}" />
+        <MouseBinding Command="MoveRight"
+                      CommandParameter="{x:Static test1:WaveformControl.HorizontalMovementFast}"
+                      Gesture="{x:Static gestures:MouseWheelGesture.ShiftWheelDown}" />
+        <KeyBinding Key="Home" Command="MoveToHome" />
+        <KeyBinding Key="End" Command="MoveToEnd" />
+        <!--  EndRegion  -->
+
+        <!--  Region Horizontal zoom  -->
+        <!--  EndRegion  -->
+
+        <!--  Region Horizontal zoom  -->
+        <!--  EndRegion  -->
+
+    </UserControl.InputBindings>
+    <UserControl.CommandBindings>
+        <CommandBinding CanExecute="ZoomOnCanExecute"
+                        Command="Zoom"
+                        Executed="ZoomOnExecuted" />
+        <CommandBinding CanExecute="MoveLeftOnCanExecute"
+                        Command="MoveLeft"
+                        Executed="MoveLeftOnExecuted" />
+        <CommandBinding CanExecute="MoveRightOnCanExecute"
+                        Command="MoveRight"
+                        Executed="MoveRightOnExecuted" />
+        <CommandBinding CanExecute="MoveToHomeOnCanExecute"
+                        Command="MoveToHome"
+                        Executed="MoveToHomeOnExecuted" />
+        <CommandBinding CanExecute="MoveToEndOnCanExecute"
+                        Command="MoveToEnd"
+                        Executed="MoveToEndOnExecuted" />
+    </UserControl.CommandBindings>
+    <Grid DataContext="{Binding Source={StaticResource TimelineUnitValues}}" Focusable="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid x:Name="GridImage"
+              MouseEnter="GridImage_OnMouseEnter"
+              MouseMove="GridImage_OnMouseMove"
+              SizeChanged="GridImage_OnSizeChanged">
+            <!--  NOTE : Grid must be in a Grid to fully expand its size  -->
+            <Image x:Name="Image1"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Stretch="None" />
+        </Grid>
+        <StackPanel Grid.Row="1">
+
+            <Slider x:Name="Slider1"
+                    Focusable="False"
+                    IsMoveToPointEnabled="True"
+                    IsSnapToTickEnabled="True"
+                    TickFrequency="1"
+                    ValueChanged="Slider1_OnValueChanged" />
+            <Border Background="#FFF1EDED">
+                <StatusBar HorizontalAlignment="Right" DataContext="{Binding ElementName=UserControl1}">
+                    <Separator />
+                    <Button Click="ButtonRefreshOnClick"
+                            Content="_Refresh"
+                            Focusable="False"
+                            Padding="0" />
+                    <Separator />
+                    <TextBlock Text="{Binding Value, ElementName=Slider1, StringFormat='{}Left sample: {0}'}" />
+                    <Separator />
+                    <TextBlock HorizontalAlignment="Right" ToolTip="Mouse cursor position">
+                        <TextBlock.Resources>
+                            <valueConverters:SampleToTimelineUnitConverter x:Key="SampleToTimelineUnitConverter" />
+                        </TextBlock.Resources>
+                        <TextBlock.ContextMenu>
+                            <ContextMenu ItemsSource="{Binding Source={StaticResource TimelineUnitValues}}">
+                                <ContextMenu.ItemContainerStyle>
+                                    <Style TargetType="MenuItem">
+                                        <Style.Setters>
+                                            <EventSetter Event="Click" Handler="EventSetter_OnHandler" />
+                                        </Style.Setters>
+                                    </Style>
+                                </ContextMenu.ItemContainerStyle>
+                            </ContextMenu>
+                        </TextBlock.ContextMenu>
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource SampleToTimelineUnitConverter}">
+                                <Binding Path="TimelineUnit" />
+                                <Binding Path="SampleOverMouse" />
+                                <Binding Path="AudioStream" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+
+                    <Separator />
+                    <TextBlock Text="{Binding ZoomRatioString, StringFormat=' x \{0\}'}" ToolTip="Zoom factor" />
+                    <Separator />
+                    <TextBlock ToolTip="File format">
+                        <TextBlock.Resources>
+                            <valueConverters:FileFormatToStringConverter x:Key="FileFormatToStringConverter" />
+                        </TextBlock.Resources>
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource FileFormatToStringConverter}">
+                                <Binding Path="AudioStream.Channels" />
+                                <Binding Path="AudioStream.OriginalResolution" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                    <Separator />
+                    <TextBlock ToolTip="Sample rate">
+                        <TextBlock.Resources>
+                            <valueConverters:SamplerateToStringConverter x:Key="SamplerateToStringConverter" />
+                        </TextBlock.Resources>
+                        <TextBlock.Text>
+                            <Binding Converter="{StaticResource SamplerateToStringConverter}" Path="AudioStream.Samplerate" />
+                        </TextBlock.Text>
+                    </TextBlock>
+
+                </StatusBar>
+            </Border>
+        </StackPanel>
+
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<package>
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <projectUrl>https://github.com/aybe/Waveform.Wpf</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      An accurate and fast waveform renderer.
+
+      This library contains a UserControl ready to use in your projects.
+
+      See GitHub repositories for latest news.
+    </description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>wpf audio wave form waveform graphics rendering renderer cache viewer theme wav pcm mp3</tags>
+  </metadata>
+</package>

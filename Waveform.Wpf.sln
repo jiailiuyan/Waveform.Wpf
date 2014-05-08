@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waveform.Wpf", "Waveform.Wpf\Waveform.Wpf.csproj", "{F0C1C42C-7CFD-4F0D-8DD2-CE5392059D9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F49B657C-B17C-43F8-8F0A-442047C343E5}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{41BD13F5-B443-4A8E-91D9-B1B4677E242E}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0C1C42C-7CFD-4F0D-8DD2-CE5392059D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0C1C42C-7CFD-4F0D-8DD2-CE5392059D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0C1C42C-7CFD-4F0D-8DD2-CE5392059D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0C1C42C-7CFD-4F0D-8DD2-CE5392059D9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
