@@ -17,3 +17,20 @@ GPL v3
 
 Make sure to check out the README at https://github.com/aybe/Waveform
 
+You can navigate the wave form using keyboard and mouse :
+
+- mouse wheel
+- arrows, PageUp, PageDown, Home, End, G, H, J
+- modifiers : Ctrl, Shift
+
+In combination, either move/zoom horizontally/vertically, faster or not.
+
+**Notes**
+
+It is still a work in progress.
+
+Currently you can only navigate within the waveform, not modify it.
+
+On the TODO list:
+- selection, copy/cut/paste
+- documentation
