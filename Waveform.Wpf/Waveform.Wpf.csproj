@@ -60,9 +60,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="Waveform, Version=1.0.5241.29984, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Waveform, Version=1.0.5241.38357, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Waveform.1.0.5241.29984\lib\net45\Waveform.dll</HintPath>
+      <HintPath>..\packages\Waveform.1.0.5241.38357\lib\net45\Waveform.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
