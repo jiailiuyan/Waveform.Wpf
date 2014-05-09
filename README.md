@@ -25,6 +25,10 @@ You can navigate the wave form using keyboard and mouse :
 
 In combination, either move/zoom horizontally/vertically, faster or not.
 
+**Example**
+
+https://github.com/aybe/Waveform.Wpf.Sample
+
 **Notes**
 
 It is still a work in progress.
