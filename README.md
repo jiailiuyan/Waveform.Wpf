@@ -31,6 +31,9 @@ https://github.com/aybe/Waveform.Wpf.Sample
 
 **Notes**
 
+
+This project use [Graphics.Wpf](https://github.com/aybe/Graphics.Wpf).
+
 It is still a work in progress.
 
 Currently you can only navigate within the waveform, not modify it.
